@@ -10,27 +10,28 @@ appDiv.innerHTML = `<h1>JS Starter</h1>`;
 var p = new Promise((resolve, reject) => {
   setTimeout(function() {
     try {
-      let i = 30 / 10;
+      //let i = 30 / 10;
       //throw new exception("dfd");
       resolve(ua);
     } catch (e) {
+      console.log('catch1');
       reject(ub);
     }
   }, 1000);
 });
 
 p.then(p => {
-  console.log(p);
+  console.log('p');
   return ua;
 })
   .then(i => {
-    console.log(i);
+    console.log('i'+i);
     defaultTeam.showMsg();
     return defaultTeam;
   })
   .then(i => {
-    console.log(i);
+    console.log(i.teamName);
   })
   .catch(function(e) {
-    console.log(e);
+    console.log('catch2');
   });
